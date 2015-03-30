@@ -17,12 +17,12 @@ import com.github.jrubygradle.JRubyExec
 
 dependencies {
     /* We need RSpec gems from rubygems.org to run RSpec */
-    jrubyExec group: 'rubygems', name: 'rspec', version: '3.1.+'
+    jrubyExec group: 'rubygems', name: 'cucumber', version: '2.0.+'
 }
 
-task spec(type: JRubyExec) {
+task cucumber(type: JRubyExec) {
     group 'JRuby'
-    description 'Execute RSpecs tests in JRuby.'
+    description 'Execute Cumcumber tests in JRuby.'
     jrubyArgs '-S'
-    script 'rspec'
-}gra
+    script 'cucumber'
+}
