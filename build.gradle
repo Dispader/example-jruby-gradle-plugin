@@ -17,12 +17,14 @@ import com.github.jrubygradle.JRubyExec
 
 dependencies {
     /* We need RSpec gems from rubygems.org to run RSpec */
-    jrubyExec group: 'rubygems', name: 'cucumber', version: '2.0.+'
+    jrubyExec group: 'rubygems', name: 'guard-gradle', version: '0.5.+'
 }
 
-task cucumber(type: JRubyExec) {
+task guard(type: JRubyExec) {
     group 'JRuby'
-    description 'Execute Cumcumber tests in JRuby.'
+    description 'Executes Guard using JRuby.'
     jrubyArgs '-S'
-    script 'cucumber'
+    script 'guard'
+    standardInput System.in
+    standardOutput System.out
 }
